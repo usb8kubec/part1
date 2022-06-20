@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ex3-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ex3
+  template:
+    metadata:
+      labels:
+        app: ex3
+    spec:
+      containers:
+        - name: ex3
+          image: usb9/ex3:ver1
