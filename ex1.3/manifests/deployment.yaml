@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: ex3
-          image: usb9/ex3:ver1
+          image: usb9/ex3:ver2
