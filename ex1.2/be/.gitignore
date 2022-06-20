@@ -1,0 +1,12 @@
+node_modules/
+package-lock.json
+
+note.md
+.prettierrc
+.env
+config/
+w_env/
+
+# .dockerignore
+# Dockerfile
+# docker-compose.yml
