@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ex7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ex7
+  template:
+    metadata:
+      labels:
+        app: ex7
+    spec:
+      containers:
+        - name: ex7
+          image: usb9/ex7:ver1
