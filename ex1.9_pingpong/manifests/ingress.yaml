@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  # name: dwk-material-ingress
+  name: dwk-material-ingress1
+spec:
+  rules:
+  - http:
+      paths:
+      # - path: /
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: ex7-svc
+      #       port:
+      #         number: 2345
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ex9-svc
+            port:
+              number: 5432

@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ex9
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ex9
+  template:
+    metadata:
+      labels:
+        app: ex9
+    spec:
+      containers:
+        - name: ex9
+          image: usb9/ex1.9:ver2
