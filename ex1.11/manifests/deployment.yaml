@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logoutput-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logoutput
+  template:
+    metadata:
+      labels:
+        app: logoutput
+    spec:
+      volumes:
+        - name: shared-log
+          emptyDir: {}
+      containers:
+        - name: pingpong
+          image: usb9/pingpong:ver1.11
+          volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files
+        - name: logoutput
+          image: usb9/logoutput:ver1.11
+          volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files
