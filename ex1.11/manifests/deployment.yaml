@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: logoutput-dep
+  name: ex11-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: logoutput
+      app: ex11
   template:
     metadata:
       labels:
-        app: logoutput
+        app: ex11
     spec:
       volumes:
         - name: shared-log
-          emptyDir: {}
+          # emptyDir: {}
+          persistentVolumeClaim: # DONE:
+            claimName: ex11-claim
       containers:
         - name: pingpong
           image: usb9/pingpong:ver1.11
@@ -22,7 +24,7 @@ spec:
           - name: shared-log
             mountPath: /usr/src/app/files
         - name: logoutput
-          image: usb9/logoutput:ver1.11
+          image: usb9/logoutput:ver3
           volumeMounts:
           - name: shared-log
             mountPath: /usr/src/app/files

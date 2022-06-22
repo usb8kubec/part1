@@ -4,8 +4,8 @@ const port = 4001
 const fs = require('fs')
 
 const path = require('path')
-const directory = path.join('/', 'hihi')
-// const directory = path.join('/', 'usr', 'src', 'app', 'files')  // TODO:
+// const directory = path.join('/', 'hihi')
+const directory = path.join('/', 'usr', 'src', 'app', 'files')  // DONE:
 const filePath = path.join(directory, 'db.json')
 
 const utils = require('./utils.js')
