@@ -15,8 +15,8 @@
   - docker build . -t usb9/todos-be:1.13.0
   - docker push usb9/todos-be:1.13.0
 
-  - docker build . -t usb9/todos-fe:1.13.0
-  - docker push usb9/todos-fe:1.13.0
+  - docker build . -t usb9/todos-fe:1.13.1
+  - docker push usb9/todos-fe:1.13.1
   
   - kubectl apply -f manifests/
   - kubectl get svc,ing

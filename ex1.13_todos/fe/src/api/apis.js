@@ -1,6 +1,6 @@
 import axios from 'axios';
 // axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000/';  // global or configuration axios defaults header
-axios.defaults.baseURL = 'http://todos-be:5000/';  // DONE:
+axios.defaults.baseURL = 'http://todos-be-svc:5000/';  // DONE:
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 // axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
 

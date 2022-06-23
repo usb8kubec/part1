@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todos-be-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todos-be
+  template:
+    metadata:
+      labels:
+        app: todos-be
+    spec:
+      containers:
+        - name: todos-be
+          image: usb9/todos-be:1.13.0

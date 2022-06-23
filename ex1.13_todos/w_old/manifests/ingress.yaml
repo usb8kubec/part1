@@ -13,10 +13,3 @@ spec:
             name: todos-fe-svc
             port:
               number: 3000
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: todos-be-svc
-            port:
-              number: 5000
