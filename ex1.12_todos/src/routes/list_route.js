@@ -7,6 +7,16 @@ const list = (process.env.NODE_ENV == 'test')
               : require("../models/list_model");
 
 router.get('/', (req, res) => {
+  if (utils.checkNewDay(savedDay)) {
+    savedDay = new Date().getDate()
+    utils.removeFile(filePath)
+      .then(() => utils.findAFile(directory, filePath))
+      .then(res => {
+        if(res !== true) {
+          utils.loadImage(filePath)
+        }
+      })
+  }
   res.send('Hello todos');
   // list.get((err, dbResult) => {
   //   if (err) {

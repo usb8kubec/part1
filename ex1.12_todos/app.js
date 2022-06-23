@@ -5,24 +5,30 @@ app.use(express.json()); // For post method, req.body
 app.use(express.urlencoded({ extended: false }));
 const cors = require('cors');
 app.use(cors());
+const fs = require('fs')
 
-/****************************************************/
+
+const path = require('path')
+const directory = path.join('/', 'hihi')
+// const directory = path.join('/', 'usr', 'src', 'app', 'files')
+const filePath = path.join(directory, 'image.jpg')
+
+const utils = require('./utils.js')
+utils.findAFile(directory, filePath)
+  .then(res => {
+    if(res !== true) {
+      utils.loadImage(filePath)
+    }
+  })
+let savedDay = new Date().getDate()
+
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.sendFile(filePath)
 });
 
 const listRoute = require('./src/routes/list_route');
 app.use('/list', listRoute);
-const connRoute = require('./src/routes/conn_route');
-app.use('/conn', connRoute);
 
-/****************************************************/
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-//   // Err1: Cannot log after tests are done. Did you forget to wait for something async in your test jest
-// }); 
-// // Err2: Error: listen EADDRINUSE: address already in use :::5000  // app.listen err when testing
-// // https://blog.campvanilla.com/jest-expressjs-and-the-eaddrinuse-error-bac39356c33a
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => {
