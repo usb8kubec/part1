@@ -58,6 +58,18 @@ app.post('/list', (req, res) => {
   })
 })
 
+app.get('/image', async (req, res) => {
+  const getFile = async () => new Promise(res => {
+    fs.readFile(filePath, (err, buffer) => {
+      if (err) return console.log('FAILED TO READ FILE', '----------------', err)
+      res(buffer)
+    })
+  })
+  const dt = await getFile()
+  res.contentType('image/jpeg')
+  res.end(dt, 'binary')
+});
+
 // // app.put('/todolist/:id', (req, res) => {
 // app.put('/todolist', (req, res) => {  // name & status
 //   let obj = req.body
