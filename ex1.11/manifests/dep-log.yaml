@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log
+  template:
+    metadata:
+      labels:
+        app: log
+    spec:
+      volumes:
+        - name: shared-log
+          # emptyDir: {}
+          persistentVolumeClaim: # DONE:
+            claimName: ex11-claim
+      containers:
+        - name: logoutput
+          image: usb9/logoutput:ver3
+          volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files
