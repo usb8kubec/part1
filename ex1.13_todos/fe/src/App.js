@@ -15,7 +15,8 @@ export default function App () {
   return (
     <div className="App">
       <div className="Home">
-        <img src="http://localhost:5000/image" alt="" />
+        <img src="http://todos-be:5000/image" alt="" />
+        {/* DONE:  */}
         <Home todos={todos} setTodos={setTodos} />
       </div>
     </div>
