@@ -12,8 +12,8 @@
   - kubectl delete -f manifests/ (At old right directory >>> Remove: old dep, service, ingress)
 
   - NOTE (for persitent vol): docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube
-  - docker build . -t usb9/todos-be:1.13.9
-  - docker push usb9/todos-be:1.13.9
+  - docker build . -t usb9/todos-be:2.02.3
+  - docker push usb9/todos-be:2.02.3
 
   - docker build . -t usb9/todos-fe:1.13.13
   - docker push usb9/todos-fe:1.13.13

@@ -12,6 +12,11 @@ spec:
       labels:
         app: todos-fe
     spec:
+      volumes:
+        - name: shared-log
+          # emptyDir: {}
+          persistentVolumeClaim: # DONE:
+            claimName: ex13-claim
       containers:
         - name: todos-fe
           image: usb9/todos-fe:2.02.2
@@ -20,3 +25,6 @@ spec:
           #   - name: REACT_APP_BACKEND_URL
           #     value: http://35.184.75.254:8081/api
           #     # value: http://localhost:8081/api
+          volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files

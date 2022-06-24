@@ -12,6 +12,14 @@ spec:
       labels:
         app: todos-be
     spec:
+      volumes:
+        - name: shared-log
+          # emptyDir: {}
+          persistentVolumeClaim: # DONE:
+            claimName: ex13-claim
       containers:
         - name: todos-be
-          image: usb9/todos-be:2.02.2
+          image: usb9/todos-be:2.02.3
+          volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files
