@@ -19,7 +19,7 @@ spec:
             claimName: ex11-claim
       containers:
         - name: pingpong
-          image: usb9/pingpong:ver1.11
+          image: usb9/pingpong:1.11.8
           volumeMounts:
           - name: shared-log
             mountPath: /usr/src/app/files

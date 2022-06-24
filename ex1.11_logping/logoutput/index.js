@@ -41,7 +41,12 @@ utils.findAFile(directory, filePath)
 
 app.get('/', (req, res) => {
   const data = JSON.parse(fs.readFileSync(filePath, { encoding: 'utf8', flag: 'r' }))
-  res.send(data)
+  res.send(`
+  <div>
+    <h1>Ping / Pongs: ${data.count}</h1>
+    <h1>${data.history[data.history.length - 1].logoutput}</h1>
+  </div>
+  `)
 })
 
 app.listen(port, () => {

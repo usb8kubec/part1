@@ -19,7 +19,7 @@ spec:
             claimName: ex11-claim
       containers:
         - name: logoutput
-          image: usb9/logoutput:ver3
+          image: usb9/logoutput:1.11.8
           volumeMounts:
           - name: shared-log
             mountPath: /usr/src/app/files

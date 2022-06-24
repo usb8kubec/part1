@@ -10,11 +10,11 @@
   - kubectl delete -f manifests/ (At old right directory >>> Remove: old dep, service, ingress)
 
   - NOTE (for persitent vol): docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube
-  - docker build . -t usb9/pingpong:ver1.11
-  - docker push usb9/pingpong:ver1.11
+  - docker build . -t usb9/pingpong:1.11.8
+  - docker push usb9/pingpong:1.11.8
   
-  - docker build . -t usb9/logoutput:ver1.11
-  - docker push usb9/logoutput:ver1.11
+  - docker build . -t usb9/logoutput:1.11.8
+  - docker push usb9/logoutput:1.11.8
 
   - kubectl apply -f manifests/
   - kubectl get svc,ing

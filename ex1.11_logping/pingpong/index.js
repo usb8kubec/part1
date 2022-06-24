@@ -20,11 +20,11 @@ utils.findAFile(directory, filePath)
     }
   })
 
-app.get('/', (req, res) => {
+app.get('/pingpong', (req, res) => {
   const db = require(filePath)
   db.count += 1
   fs.writeFileSync(filePath, JSON.stringify(db))
-  res.json(db)
+  res.json(db.count)
 })
 
 app.listen(port, () => {
