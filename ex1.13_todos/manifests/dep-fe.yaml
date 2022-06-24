@@ -14,4 +14,9 @@ spec:
     spec:
       containers:
         - name: todos-fe
-          image: usb9/todos-fe:1.13.1
+          image: usb9/todos-fe:2.02.2
+          # We use npm run build >>> this env not work >>> use 2 file.env in /fe 
+          # env:
+          #   - name: REACT_APP_BACKEND_URL
+          #     value: http://35.184.75.254:8081/api
+          #     # value: http://localhost:8081/api

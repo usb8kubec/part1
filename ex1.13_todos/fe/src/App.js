@@ -4,6 +4,8 @@ import apis from './api/apis';
 import './App.css';
 import Home from './routers/Home';
 
+let linkImg = `${process.env.REACT_APP_BACKEND_URL || 'hihi'}/image`
+
 export default function App () {
   const [todos, setTodos] = useState([]);
 
@@ -15,7 +17,7 @@ export default function App () {
   return (
     <div className="App">
       <div className="Home">
-        <img src="http://todos-be-svc:5000/image" alt="" />
+        <img src={linkImg} alt="" />
         {/* DONE:  */}
         <Home todos={todos} setTodos={setTodos} />
       </div>

@@ -5,8 +5,8 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: todos
+    app: todos-fe
   ports:
-    - port: 3000
+    - port: 5000
       protocol: TCP
       targetPort: 3000

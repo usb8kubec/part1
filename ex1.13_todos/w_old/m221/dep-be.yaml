@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: todos-be
-          image: usb9/todos-be:2.02.2
+          image: usb9/todos-be:1.13.0

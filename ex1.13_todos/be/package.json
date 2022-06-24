@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "set NODE_ENV=dev&&nodemon ./app.js",
-    "start-prod": "set NODE_ENV=prod&&nodemon ./app.js",
+    "start": "node app.js",
+    "dev": "NODE_ENV=dev nodemon app.js",
     "start-test": "set NODE_ENV=test&&nodemon ./app.js",
     "test": "set NODE_ENV=test&&jest --watchAll",
     "format": "prettier --write ."
